@@ -37,7 +37,12 @@
     --bg-white: #fff;
     --bg-light: #f7f9fc;
 
-    --standard-box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.15)
+    --standard-box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.15);
+    --primary-gradient: linear-gradient(101.33deg,
+            #08209a 0.76%,
+            #6563ff 33.33%,
+            #36c5f0 76.92%,
+            #83e2ff 96.96%);
 }
 
 body {
@@ -312,7 +317,7 @@ p {
 
 /* HERO STYLES */
 main {
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-xl) 0 0 0;
     width: 100%;
 }
 
@@ -517,6 +522,8 @@ main {
     display: flex;
     justify-content: center;
     color: var(--text-light);
+    position: relative;
+    padding: calc(var(--spacing-lg) *3) 0;
 }
 
 .global-section a {
@@ -543,4 +550,206 @@ main {
     border-left: 2px solid var(--blue-1);
     padding: 0 0 0 var(--spacing-sm);
     line-height: 28px;
+}
+
+#globe {
+    max-width: 844px;
+    opacity: 25%;
+    position: absolute;
+    top: 10%;
+}
+
+/* virtual Event Section */
+
+.virtual-event-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(var(--spacing-xl) * 2) 0;
+}
+
+.virtual-event-section .primary-button {
+    background-color: var(--purple-1);
+    margin: var(--spacing-md) 0;
+}
+
+.virtual-event-section .primary-button:hover {
+    background-color: var(--primary-accent);
+
+}
+
+.swipe-sessions-card {
+    width: 540px;
+    height: 446px;
+    box-shadow: var(--standard-box-shadow);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.swipe-sessions-card .card-top {
+    background-color: var(--purple-1);
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.swipe-sessions-card .card-top::before {
+    background: var(--primary-gradient);
+    content: "";
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    top: -40%;
+    transform: skewY(-5deg);
+    z-index: 1;
+
+}
+
+#sessions-logo {
+    z-index: 2;
+    width: 338px;
+}
+
+.virtual-event-section .avatars {
+    position: absolute;
+    bottom: -70px;
+    left: var(--spacing-xl);
+    z-index: 3;
+    /* width: 140px;
+    height: 80px; */
+
+}
+
+.virtual-event-section .avatars img {
+    width: 80px;
+}
+
+.virtual-event-section .avatars img:nth-of-type(2) {
+    position: absolute;
+    left: 55px;
+}
+
+.virtual-event-section .card-bottom {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: var(--spacing-xl);
+}
+
+.virtual-event-section .card-bottom .subtitle {
+    margin: var(--spacing-lg) 0 0 0;
+}
+
+.virtual-event-section .card-bottom .secondary-text {
+    color: var(--text-dark);
+    width: 50%;
+    font-weight: 700;
+}
+
+.virtual-event-section .col-left {
+    height: 446px;
+    padding: 0 var(--spacing-xl) 0 0;
+}
+
+/* getting-started-section */
+
+.getting-started-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.getting-started-section .primary-button {
+    background-color: var(--purple-1);
+    margin: var(--spacing-md) 0;
+}
+
+.getting-started-section .primary-button:hover {
+    background-color: var(--primary-accent);
+}
+
+.getting-started-section .col-right {
+    flex-direction: row;
+}
+
+.getting-started-section .col-left {
+    padding: 0 var(--spacing-xl) 0 0;
+}
+
+.getting-started-section .col-right .card {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 var(--spacing-sm) 0 0;
+    margin: 0 var(--spacing-md) 0 0;
+
+}
+
+.getting-started-section .col-right .card .secondary-button {
+    color: var(--purple-2);
+    padding-left: 0;
+}
+
+/* Footer  */
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-light);
+    padding: var(--spacing-xl) 0;
+
+}
+
+#footer-logo {
+    max-width: 108px;
+    max-width: 0 0 var(--spacing-md)0;
+}
+
+.footer .section-container {
+    display: flex;
+
+}
+
+.footer .col {
+    width: 25%;
+}
+
+.footer .col ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+.footer .col ul li {
+    margin: var(--spacing-md) 0;
+}
+
+.footer .col a {
+    color: var(--text-dark);
+    font-weight: normal;
+}
+
+.footer .col a:hover {
+    color: var(--purple-1);
+    text-decoration: underline;
+}
+
+.footer .icon-link {
+    display: flex;
+    align-self: center;
+    margin: var(--spacing-md) 0;
+}
+
+.footer .icon-link img {
+    width: 24px;
+}
+
+.footer h3 {
+    font-size: var(--h6-size);
+    font-weight: 500;
+    font-weight: 700;
+
 }
